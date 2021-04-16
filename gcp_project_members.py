@@ -3,7 +3,7 @@ import os
 import json
 import sys,subprocess
 
-CACHE_DIR = "./output"
+CACHE_DIR = "./tmp/gcp-output"
 os.makedirs(CACHE_DIR, exist_ok=True)
 
 def cache_path(cmd):
