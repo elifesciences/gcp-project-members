@@ -12,6 +12,8 @@ A small python script to list GCP (Google Cloud Provider) projects and their mem
     gcloud auth login
     python gcp_project_members.py
 
+see: `./update.sh`
+
 ## licence
 
 [MIT licensed](./LICENCE).
