@@ -72,15 +72,15 @@ def project_members(project_id):
         for member in binding["members"]:
             if member.startswith("user:"):
                 member = member[len("user:"):]
-            member_list.append(member)
+            member_list.append((member, binding["role"]))
     return member_list
 
 def main():
     user_email = 'c.wilkinson@elifesciences.org'
     for project_id in project_list():
         for m in project_members(project_id):
-            if user_email == m:
-                print(project_id)
+            if user_email == m[0]:
+                print(project_id, m)
     return 0
 
 if __name__ == '__main__':
