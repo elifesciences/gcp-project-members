@@ -76,7 +76,10 @@ def project_members(project_id):
     return member_list
 
 def main():
-    user_email = 'c.wilkinson@elifesciences.org'
+    if len(sys.argv) != 2:
+        print("ERROR: pass a user's email address as the first argument")
+        return 1
+    user_email = sys.argv[1]
     for project_id in project_list():
         for m in project_members(project_id):
             if user_email == m[0]:
