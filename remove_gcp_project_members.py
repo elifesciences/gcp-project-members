@@ -80,7 +80,7 @@ def main():
     for project_id in project_list():
         for m in project_members(project_id):
             if user_email == m[0]:
-                print(project_id, m)
+                print(gcs_cmd(f"projects remove-iam-policy-binding {project_id} --member=user:{user_email} --role={m[1]}")['stderr'])
     return 0
 
 if __name__ == '__main__':
