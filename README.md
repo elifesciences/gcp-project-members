@@ -1,18 +1,26 @@
 # gcp-project-members
 
-A small python script to list GCP (Google Cloud Provider) projects and their members.
+Small python scripts to list GCP (Google Cloud Provider) projects, their members and remove users across all projects.
+
 
 ## requires
 
 * Python 3.6+
 * gcloud
 
-## usage
+## Get a list of projects with their members
+```
+gcloud auth login
+python gcp_project_members.py
+```
 
-    gcloud auth login
-    python gcp_project_members.py
+See `./update.sh` how to log in if you need to open the browser manually.
 
-see: `./update.sh`
+## Remove user across all projects
+
+```
+python remove_gcp_project_members.py their-email-address@example.com
+```
 
 ## licence
 
